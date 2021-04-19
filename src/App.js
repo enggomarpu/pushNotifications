@@ -31,11 +31,7 @@ function App() {
     alert('Received notification: ' + message);
   });
 
-  const pushnoti = () => {
-
-    // Register visitor's browser for push notifications
-  }
-
+  
   return (
     <div className="App">
       <h1>Hello World</h1>
