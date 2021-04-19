@@ -19,6 +19,12 @@ function App() {
     console.error(err);
   });
 
+  const data = {
+    "title": "Test Notificationjjjjjjjjjjjjjjjjjjjjjj", // Notification title
+    "url": "https://pushy.me/", // Opens when tapped
+    "message": "Hello World!", // Notification body text
+    "image": "https://example.com/image.png" // Optional image
+}
   // Handle push notifications (only when web page is open)
   Pushy.setNotificationListener(function (data) {
     // Print notification payload data
