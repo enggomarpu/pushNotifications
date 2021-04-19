@@ -4,7 +4,7 @@ import Pushy from 'pushy-sdk-web';
 
 function App() {
 
-  const deviceToken = '379d424b0cf1fe9c81a3e4';
+  //const deviceToken = '379d424b0cf1fe9c81a3e4';
 
   Pushy.register({ appId: '607d3e9ebe50e00f1b8f55ab' }).then(function (deviceToken) {
     // Print device token to console
@@ -27,7 +27,7 @@ function App() {
     // Attempt to extract the "message" property from the payload: {"message":"Hello World!"}
     let message = data.message || 'Test notification';
 
-    // Display an alert with message sent from server
+    // Display an alert with message sent from 
     alert('Received notification: ' + message);
   });
 
@@ -39,7 +39,7 @@ function App() {
   return (
     <div className="App">
       <h1>Hello World</h1>
-      <button onClick={pushnoti}>PUsh Notifiactoin</button>
+     
 
     </div>
   );
