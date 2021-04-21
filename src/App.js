@@ -9,19 +9,9 @@ function App() {
   //const deviceToken = '379d424b0cf1fe9c81a3e4';
 
   useEffect(()=>{
-     // Handle push notifications (only when web page is open)
- Pushy.setNotificationListener(function (data) {
-  // Print notification payload data
-  console.log('Received notification: ' + JSON.stringify(data));
-
-  // Attempt to extract the "message" property from the payload: {"message":"Hello World!"}
-  let message = data.message || 'Test notification';
-
-  // Display an alert with message sent from 
-  alert('Received notification: ' + message);
-});
-
+     
   }, [])
+
   const hitUrl = () => {
 
   Pushy.register({ appId: '607d3e9ebe50e00f1b8f55ab' }).then(function (deviceToken) {
@@ -38,10 +28,21 @@ function App() {
     // Handle registration errors
     console.error(err);
   });
-
- 
  
 }
+
+// Handle push notifications (only when web page is open)
+Pushy.setNotificationListener(function (data) {
+  // Print notification payload data
+  console.log('Received notification: ' + JSON.stringify(data));
+
+  // Attempt to extract the "message" property from the payload: {"message":"Hello World!"}
+  let message = data.message || 'Test notification';
+
+  // Display an alert with message sent from 
+  alert('Received notification: ' + message);
+});
+
 
  
 
