@@ -24,10 +24,7 @@ function App() {
     console.error(err);
   });
 
- 
-}
-
- // Handle push notifications (only when web page is open)
+  // Handle push notifications (only when web page is open)
  Pushy.setNotificationListener(function (data) {
   // Print notification payload data
   console.log('Received notification: ' + JSON.stringify(data));
@@ -36,8 +33,14 @@ function App() {
   let message = data.message || 'Test notification';
 
   // Display an alert with message sent from 
-  //alert('Received notification: ' + message);
+  alert('Received notification: ' + message);
 });
+
+ 
+}
+
+ 
+
   const hitUrlNotify = () => {
     fetch('https://push-notifications-app-aip.herokuapp.com/push');
 }
