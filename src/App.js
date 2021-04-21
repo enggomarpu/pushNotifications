@@ -24,9 +24,8 @@ function App() {
     // Handle registration errors
     console.error(err);
   });
- 
-}
-// Handle push notifications (only when web page is open)
+
+  // Handle push notifications (only when web page is open)
 Pushy.setNotificationListener(function (data) {
   // Print notification payload data
   console.log('Received notification: ' + JSON.stringify(data));
@@ -37,6 +36,9 @@ Pushy.setNotificationListener(function (data) {
   // Display an alert with message sent from 
   alert('Received notification: ' + message);
 });
+
+ 
+}
 
  
   const hitUrlNotify = () => {
