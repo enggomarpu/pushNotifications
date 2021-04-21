@@ -1,8 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
-import axios from 'axios';
 import Pushy from 'pushy-sdk-web';
 import { useEffect } from 'react';
+import Header from './Header';
 
 function App() {
 
@@ -31,27 +31,13 @@ function App() {
  
 }
 
-// Handle push notifications (only when web page is open)
-Pushy.setNotificationListener(function (data) {
-  // Print notification payload data
-  console.log('Received notification: ' + JSON.stringify(data));
-
-  // Attempt to extract the "message" property from the payload: {"message":"Hello World!"}
-  let message = data.message || 'Test notification';
-
-  // Display an alert with message sent from 
-  alert('Received notification: ' + message);
-});
-
-
- 
-
   const hitUrlNotify = () => {
     fetch('https://push-notifications-app-aip.herokuapp.com/push');
 }
 
   return (
     <div className="App">
+      <Header />
       <h1>Hello World</h1>
       <button onClick={hitUrl}>Button</button>
       <button onClick={hitUrlNotify}>Pusth Notification</button>
