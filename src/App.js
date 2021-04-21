@@ -15,7 +15,7 @@ function App() {
 
 
     // Send the token to your backend server via an HTTP GET request
-    fetch('http://localhost:3000/register/'+deviceToken);
+    fetch('https://push-notifications-app-aip.herokuapp.com/register/'+deviceToken);
 
     //axios.get('http://localhost:3000/register/'+deviceToken);
 
@@ -40,7 +40,7 @@ function App() {
   //alert('Received notification: ' + message);
 });
   const hitUrlNotify = () => {
-    fetch('http://localhost:3000/push');
+    fetch('https://push-notifications-app-aip.herokuapp.com/push');
 }
 
   return (
