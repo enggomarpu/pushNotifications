@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
 import Pushy from 'pushy-sdk-web';
+import Header from './Header';
 
 function App() {
 
@@ -34,6 +35,7 @@ function App() {
 
   return (
     <div className="App">
+      <Header />
       <h1>Hello World</h1>
       <button onClick={hitUrl}>Button</button>
       <button onClick={hitUrlNotify}>Push Notification</button>
