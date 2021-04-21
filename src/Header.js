@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-const [count, setCount] = useState(0);
 import Pushy from 'pushy-sdk-web';
 
-
-
-// Handle push notifications (only when web page is open)
+  
+const Header = () => {
+    const [count, setCount] = useState(0);
+    // Handle push notifications (only when web page is open)
 Pushy.setNotificationListener(function (data) {
     // Print notification payload data
     console.log('Received notification: ' + JSON.stringify(data));
@@ -15,12 +15,14 @@ Pushy.setNotificationListener(function (data) {
     // Display an alert with message sent from 
     alert('Received notification: ' + message);
   });
-  
-const Header = () => {
+    
+    return(
     <div>
+
 
     <h2>Notification{count}</h2>
     <h1>Hello</h1>
     </div>
+    );
 }
 export default Header;
