@@ -13,7 +13,6 @@ function App() {
     // Print device token to console
     console.log('Pushy device token: ' + deviceToken);
 
-
     // Send the token to your backend server via an HTTP GET request
     fetch('https://push-notifications-app-aip.herokuapp.com/register/'+deviceToken);
 
@@ -28,26 +27,16 @@ function App() {
  
 }
 
- // Handle push notifications (only when web page is open)
- Pushy.setNotificationListener(function (data) {
-  // Print notification payload data
-  console.log('Received notification: ' + JSON.stringify(data));
-
-  // Attempt to extract the "message" property from the payload: {"message":"Hello World!"}
-  let message = data.message || 'Test notification';
-
-  // Display an alert with message sent from 
-  //alert('Received notification: ' + message);
-});
+ 
   const hitUrlNotify = () => {
-    fetch('http://localhost:3000/push');
+    fetch('https://push-notifications-app-aip.herokuapp.com/push');
 }
 
   return (
     <div className="App">
       <h1>Hello World</h1>
       <button onClick={hitUrl}>Button</button>
-      <button onClick={hitUrlNotify}>Pusth Notification</button>
+      <button onClick={hitUrlNotify}>Push Notification</button>
     </div>
   );
 }
