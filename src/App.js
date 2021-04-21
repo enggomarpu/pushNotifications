@@ -15,7 +15,7 @@ function App() {
 
 
     // Send the token to your backend server via an HTTP GET request
-    fetch('https://push-notifications-app-aip.herokuapp.com/register/'+deviceToken);
+    //fetch('https://push-notifications-app-aip.herokuapp.com/register/'+deviceToken);
 
 
     // Succeeded, optionally do something to alert the user
