@@ -10,25 +10,25 @@ function App() {
 
   useEffect(()=>{
 
-    Pushy.register({ appId: '607d3e9ebe50e00f1b8f55ab' }).then(function (deviceToken) {
-      // Print device token to console
-      console.log('Pushy device token: ' + deviceToken);
-  
-  
-      // Send the token to your backend server via an HTTP GET request
-      //fetch('https://push-notifications-app-aip.herokuapp.com/register/'+deviceToken);
-   
-  
-      // Succeeded, optionally do something to alert the user
-    }).catch(function (err) {
-      // Handle registration errors
-      console.error(err);
-    });
-     
-    
-
   }, [])
 
+
+  Pushy.register({ appId: '607d3e9ebe50e00f1b8f55ab' }).then(function (deviceToken) {
+    // Print device token to console
+    console.log('Pushy device token: ' + deviceToken);
+
+
+    // Send the token to your backend server via an HTTP GET request
+    //fetch('https://push-notifications-app-aip.herokuapp.com/register/'+deviceToken);
+ 
+
+    // Succeeded, optionally do something to alert the user
+  }).catch(function (err) {
+    // Handle registration errors
+    console.error(err);
+  });
+
+  
   Pushy.setNotificationListener(function (data) {
     // Print notification payload data
     console.log('Received notification: ' + JSON.stringify(data));
