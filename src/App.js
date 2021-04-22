@@ -25,18 +25,20 @@ function App() {
       console.error(err);
     });
      
-    Pushy.setNotificationListener(function (data) {
-      // Print notification payload data
-      console.log('Received notification: ' + JSON.stringify(data));
-      //setCount(count + 1)
-      // Attempt to extract the "message" property from the payload: {"message":"Hello World!"}
-      let message = data.message || 'Test notification';
-
-      // Display an alert with message sent from 
-      //alert('Received notification: ' + message);
-  });
+    
 
   }, [])
+
+  Pushy.setNotificationListener(function (data) {
+    // Print notification payload data
+    console.log('Received notification: ' + JSON.stringify(data));
+    //setCount(count + 1)
+    // Attempt to extract the "message" property from the payload: {"message":"Hello World!"}
+    let message = data.message || 'Test notification';
+
+    // Display an alert with message sent from 
+    //alert('Received notification: ' + message);
+});
 
   const hitUrl = () => {
 
