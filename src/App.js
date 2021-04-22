@@ -20,7 +20,7 @@ function App() {
       Pushy.setNotificationListener(function (data) {
         // Print notification payload data
         console.log('Received notification: ' + JSON.stringify(data));
-        setCount(count + 1)
+        //setCount(count + 1)
         // Attempt to extract the "message" property from the payload: {"message":"Hello World!"}
         let message = data.message || 'Test notification';
   
