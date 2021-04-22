@@ -21,16 +21,7 @@ function App() {
     // Send the token to your backend server via an HTTP GET request
     //fetch('https://push-notifications-app-aip.herokuapp.com/register/'+deviceToken);
  
-    Pushy.setNotificationListener(function (data) {
-      // Print notification payload data
-      console.log('Received notification: ' + JSON.stringify(data));
-      //setCount(count + 1)
-      // Attempt to extract the "message" property from the payload: {"message":"Hello World!"}
-      let message = data.message || 'Test notification';
-  
-      // Display an alert with message sent from 
-      //alert('Received notification: ' + message);
-    });
+    
 
     // Succeeded, optionally do something to alert the user
   }).catch(function (err) {
