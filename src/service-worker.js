@@ -1,9 +1,3 @@
-//import { precacheAndRoute } from 'workbox-precaching';
-// Your other import statements go here.
-
-//precacheAndRoute(self.__WB_MANIFEST);
-// Listen for incoming push notifications
-
 // eslint-disable-next-line no-restricted-globals
 const ignored = self.__WB_MANIFEST;    
 
@@ -20,7 +14,6 @@ const ignored = self.__WB_MANIFEST;
 // opt-in, read https://bit.ly/CRA-PWA
 // Import Pushy Service Worker 1.0.7
 
-//importScripts('https://sdk.pushy.me/web/1.0.7/pushy-service-worker.js');
 
 const isLocalhost = Boolean(
     window.location.hostname === 'localhost' ||
@@ -44,7 +37,7 @@ const isLocalhost = Boolean(
       }
   
       window.addEventListener('load', () => {
-        const swUrl = `https://sdk.pushy.me/web/1.0.7/pushy-service-worker.js`;
+        const swUrl = `${process.env.PUBLIC_URL}/pushy-service-worker.js`;
   
         if (isLocalhost) {
           // This is running on localhost. Let's check if a service worker still exists or not.
